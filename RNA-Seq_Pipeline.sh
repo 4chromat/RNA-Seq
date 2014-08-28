@@ -57,7 +57,7 @@ done
 
 [ -f  samples.txt ] && rm samples.txt   # Just as precaution
 [ -f  renamedSamples.txt ] && rm renamedSamples.txt
-[ -f  replicateSamples.txt ] && rm rreplicateSamples.txt
+[ -f  replicateSamples.txt ] && rm replicateSamples.txt
 ls -d */ | sed 's/\/$//' > samples.txt
 
 echo -e "\nTo rename sample, type in new name + [ENTER], else just hit [ENTER].
