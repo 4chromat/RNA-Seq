@@ -143,8 +143,8 @@ toplist=''
 
 for miniID in $minimalnamesSep
     do
-        temp=`grep $miniID replicateSamples.txt| cut -d " " -f 2 | while read -r line; do echo -n "tophat_out_$line/accepted_hits.bam,"; done | sed 's/,$//'`;
-        toplist="$toplist $temp";
+        temp=`grep "$miniID" replicateSamples.txt| cut -d " " -f 2 | while read -r line; do echo -n "tophat_out_$line/accepted_hits.bam,"; done | sed 's/,$//'`
+        toplist="$toplist $temp"
     done
 
 cuffdiff -o CUFFDIFF --no-update-check -b ~/Vol/RefGenomes/WholeGenome_mm9_Ensembl.fa -p 4 -L $minimalnames -u CUFFMERGE/merged.gtf $toplist &> Log_Cuffdiff_${today}_${user}.txt
